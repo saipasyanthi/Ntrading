@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<body>
+
+<!-- Navbar (sit on top) --> 
+<div class="w3-top">
+ 
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+   
+    <a href="#home" class="w3-bar-item w3-button">
+      
+      <img src="/assets/Images/ntrading2.png" class="w3-round w3-image w3-opacity-min" width="120" height="250">
+    </a>
+    <!-- Right-sided navbar links. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="#about" class="w3-bar-item w3-button">About</a>
+      <a href="#menu" class="w3-bar-item w3-button">Items</a>
+      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+    </div>
+  </div>
+</div> 
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+  <img class="w3-image" src="/assets/Images/Image01.jpg" alt="Hamburger Catering" width="1600" height="800">
+  <div class="w3-display-bottomleft w3-padding-large w3-opacity">
+    <h1 class="w3-xxlarge">NATUREOOZE</h1>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px">
+
+  <!-- About Section -->
+  <div class="w3-row w3-padding-64" id="about">
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+     <img src="/assets/Images/image04.jpeg" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
+    </div>
+
+    <div class="w3-col m6 w3-padding-large">
+      <h1 class="w3-center">About N Trading Store</h1><br>
+      <p class="w3-large w3-text-grey w3-hide-medium">Establishing long-lasting and proximate working relationships with clients and supplier, not only to provide instantaneous and reliable service but also to continually exceed expectations and goals.</p>
+      <p class="w3-large w3-text-grey w3-hide-medium">Fabricating commercial flows, imports and export products, arranging and managing national projects with our partners.</p>
+      <p class="w3-large w3-text-grey w3-hide-medium">As a Trading store, we specialize in general global trade. By choosing us as your trading partner, we not only provide you with efficient marketing and distribution solutions for your products and/or services,
+         but also have extensive experience in assisting manufacturers and distributors with achieving your mission of worldwide presence. 
+        We also help companies translate their dreams into reality.</p>
+    </div>
+  </div>
+  
+  <hr>
+  
+   <!-- items Section -->
+ <app-items></app-items>
+
+
+
+  <!-- Contact Section -->
+  <div class="w3-container w3-padding-64" id="contact">
+    <h1>Contact</h1><br>
+    <p>We provide 24/7 assistance for any supplier or consumer. We understand your needs and try to offer the products that satisfy your basic needs. Do not hesitate to contact us, we keep our ears open for your valuable feedback</p>
+    <p class="w3-text-blue-grey w3-large"><b>NATUREOOZE PVT. LTD
+      16-140 Gayatri Nagar Colony, Peerzadiguda,
+      Uppal, Hyderabad - 500 098 </b></p>
+    <p>For more information contact us at sales@natureooze.com, or you can send us a message here:</p>
+ 
+     
+    <form #sendmailForm="ngForm" (ngSubmit)="sendMail(sendmailForm)">
+
+      <p><input class="w3-input w3-padding-16"  type="text" placeholder="Name*" required name="Name"  [(ngModel)]="Name"></p>
+
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Email*" required name="Email"  [(ngModel)]="Email" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" ></p>
+
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Contact Number*" required name="Contact Number"  [(ngModel)]="ContactNumber"></p>
+
+      <p><input class="w3-input w3-padding-16" type="number" placeholder="How many Items*" required name="Count" [(ngModel)]="Count"></p>
+
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message \ Special requirements*" required name="Message" [(ngModel)]="Message"></p>
+
+      <p><button class="w3-button w3-light-grey w3-section" type="submit"  [disabled]="sendmailForm.invalid">SEND MESSAGE</button></p>
+
+  
+    </form>
+
+
+  </div>
+  
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-32">
+  <p>Copy rights <a title="N Trading Store" target="_blank" class="w3-hover-text-green"> © N Trading Store</a></p>
+  <img src="/assets/Images/ntrading2.png" class="w3-round w3-image w3-opacity-min" width="300" height="500">
+</footer>
+
+</body>
+</html>
