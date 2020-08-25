@@ -6,9 +6,8 @@ import {MatVideoModule} from 'mat-video';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ItemsComponent } from './items/items.component';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+
 
 @NgModule({
   declarations: [
@@ -18,12 +17,10 @@ import {MatIconModule} from '@angular/material/icon';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatInputModule,
-    MatButtonModule,
-    MatIconModule,
     MatVideoModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgMultiSelectDropDownModule
 
   ],
   providers: [],

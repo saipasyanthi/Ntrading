@@ -8,9 +8,6 @@ import {ResponseModel} from './app.component';
 export class MailServiceService {
 
   constructor(private http: HttpClient) { }
-
-
-
   public sendMail(formdata: FormData) {
       const url = 'http://ntradingstore.com/MailApi.php';
     return this.http.post<ResponseModel>(url, formdata);

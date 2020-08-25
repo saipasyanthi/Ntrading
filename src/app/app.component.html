@@ -77,15 +77,31 @@
 
       <p><input class="w3-input w3-padding-16" type="text" placeholder="Contact Number*" required name="Contact Number"  [(ngModel)]="ContactNumber"></p>
 
+      <ng-multiselect-dropdown  
+        [placeholder]="'Select Items'"
+        [settings]="dropdownSettings"
+        [data]="dropdownList"
+        [(ngModel)]="selectedItems" 
+        (onSelect)="onItemSelect($event)"       
+        (onDeSelect)="onDeSelect($event)"
+        [required]='requiredField' 
+        [ngClass]='setClass()'
+        name='ItemSelect'
+    >
+    </ng-multiselect-dropdown>
+    
+    <p *ngIf="!requiredField">
+      Please select Items !!
+    </p>
+
       <p><input class="w3-input w3-padding-16" type="number" placeholder="How many Items*" required name="Count" [(ngModel)]="Count"></p>
 
       <p><input class="w3-input w3-padding-16" type="text" placeholder="Message \ Special requirements*" required name="Message" [(ngModel)]="Message"></p>
 
-      <p><button class="w3-button w3-light-grey w3-section" type="submit"  [disabled]="sendmailForm.invalid">SEND MESSAGE</button></p>
+      <p><button class="w3-button w3-light-grey w3-section" type="submit"  [disabled]="sendmailForm.invalid || !requiredField">SEND MESSAGE</button></p>
 
   
-    </form>
-
+    </form> 
 
   </div>
   
